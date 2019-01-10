@@ -77,9 +77,9 @@
                             </div>
                         </div>
                         <div>
-                            <asp:Button CssClass="btn btn-primary" ID="Salvar" Text="Salvar" runat="server" OnClick="Salvar_Click" />
-                            <asp:Button CssClass="btn btn-light" Text="Liberar" ID="Liberar" runat="server" OnClick="Liberar_Click"/>
-                            <asp:Button CssClass="btn btn-danger" Text="Cancelar" ID="Cancelar" runat="server" OnClick="Cancelar_Click" />
+                            <asp:Button CssClass="btn btn-primary" ID="Salvar" Text="Salvar" runat="server" />
+                            <asp:Button CssClass="btn btn-light" Text="Liberar" ID="Liberar" runat="server" />
+                            <asp:Button CssClass="btn btn-danger" Text="Cancelar" ID="Cancelar" runat="server" />
                         </div>
                         <div class="mt-4">
                             <button type="button" class="btn btn-light" data-toggle="modal" data-target="#AddItem" runat="server">Adicionar Item</button>
@@ -119,56 +119,4 @@
             </div>
         </div>
     </div>
-
-    <div class="modal" id="AddItem" tabindex="-1" role="dialog" style="height: auto; width: auto;">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Adicionar Item</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="form-group col">
-                                <label>Produto</label>
-                                <asp:TextBox runat="server" ID="txtproduto" CssClass="form-control" list="ContentPlaceHolder1_produto" OnTextChanged="txtproduto_TextChanged" AutoPostBack="true"></asp:TextBox>                                
-                                <datalist id="produto" runat="server" >                                    
-                                </datalist>                               
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col">
-                                <label>Qtd</label>
-                                <asp:TextBox runat="server" ID="txtProdutoID" CssClass="form-control" ReadOnly="true" Visible="false"/>                                
-                                <asp:TextBox runat="server" ID="AddQuantidade" CssClass="form-control" AutoPostBack="true" OnTextChanged="AddQuantidade_TextChanged"></asp:TextBox>
-                            </div>
-
-                            <div class="form-group col">
-                                <label>Vlr. Unitario</label>
-                                <asp:TextBox runat="server" ID="ValorUnitario" DataFormatString="{0:C}" CssClass="form-control"></asp:TextBox>
-                            </div>
-
-                            <div class="form-group col">
-                                <label>Vlr. Total</label>
-                                <asp:TextBox runat="server" ID="ValorItemTotal" DataFormatString="{0:C}" CssClass="form-control"></asp:TextBox>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal-footer">
-                    <asp:Button CssClass="btn btn-primary" Text="Adicionar" ID="AdicionarItem" runat="server" OnClick="AdicionarItem_Click" />
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script>
-        function fucaoExibirModal() {
-            $('#AddItem').modal();
-        }
-    </script>
 </asp:Content>

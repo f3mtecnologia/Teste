@@ -43,13 +43,5 @@ namespace WebApplication1.Venda
             Response.Redirect($"~/Venda/PedidoVenda.aspx?");
         }
 
-        protected void Excluir_Click(object sender, EventArgs e)
-        {
-            var id = dgBusca.Items[Convert.ToInt32(((LinkButton)sender).CommandArgument)].Cells[3].Text;
-            pvDao.DeletePedido(int.Parse(id));
-
-            dgBusca.DataSource = pvDao.Listar(busca.Text);
-            dgBusca.DataBind();
-        }
     }
 }

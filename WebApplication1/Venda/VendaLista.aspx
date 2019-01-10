@@ -37,23 +37,6 @@
                     <div class="card-body">
                         <asp:DataGrid runat="server" ID="dgBusca" AutoGenerateColumns="False" CssClass="table table-striped table-bordered" HeaderStyle-CssClass="bg-dark text-white">
                             <Columns>
-                                <asp:TemplateColumn>
-                                    <ItemTemplate>
-                                        <asp:LinkButton runat="server" CommandName="Excluir" CommandArgument="<%# Container.DataSetIndex %>" Text="Excluir"  OnClick="Excluir_Click" ID="Excluir" />
-
-                                    </ItemTemplate>
-                                </asp:TemplateColumn>
-                                <asp:TemplateColumn>
-                                    <ItemTemplate>
-                                        <asp:LinkButton runat="server" CommandName="abrir" CommandArgument="<%# Container.DataSetIndex %>" Text="abrir" OnClick="AbrirVenda_Click" ID="AbrirVenda" />
-
-                                    </ItemTemplate>
-                                </asp:TemplateColumn>
-                                <asp:TemplateColumn>
-                                    <ItemTemplate>
-                                        <asp:LinkButton runat="server" CommandArgument='<%#Eval("PedidoId")%>' Text="Liberar Pedido" OnClick="Liberarpedido_Click" ID="Liberarpedido" />
-                                    </ItemTemplate>
-                                </asp:TemplateColumn>
                                 <asp:BoundColumn DataField="PedidoId" HeaderText="Codigo Pedido" ReadOnly="True"></asp:BoundColumn>
                                 <asp:BoundColumn DataField="Cliente" HeaderText="Cliente"></asp:BoundColumn>
                                 <asp:BoundColumn DataField="Vendedor" HeaderText="Vendedor"></asp:BoundColumn>
